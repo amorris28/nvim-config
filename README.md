@@ -11,7 +11,7 @@ Simple nvim setup with:
 ```
 mkdir -p ~/.local/bin
 cd ~/.local/bin
-curl -LO https://github.com/neovim/neovim/releases/download/v0.11.6/nvim-linux-x86_64.appimage
+curl -LO https://github.com/neovim/neovim/releases/latest/download/nvim-linux-x86_64.appimage
 chmod +x nvim-linux-x86_64.appimage
 ln -s nvim-linux-x86_64.appimage nvim
 ```
