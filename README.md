@@ -6,4 +6,44 @@ Simple nvim setup with:
 - No heavy dependencies
 
 ## Install
-git clone <this-repo> ~/.config/nvim
+
+### 1. Install nvim as appimage
+```
+mkdir -p ~/.local/bin
+cd ~/.local/bin
+curl -LO https://github.com/neovim/neovim/releases/download/v0.11.6/nvim-linux-x86_64.appimage
+chmod +x nvim-linux-x86_64.appimage
+ln -s nvim-linux-x86_64.appimage nvim
+```
+
+#### (Optional) Add to PATH if not already there
+```
+echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
+source ~/.bashrc
+```
+
+### 2. Clone this repo
+```
+git clone https://github.com/amorris28/nvim-config ~/.config/nvim
+```
+
+### 3. Run nvim to install plugins and finish installation
+```
+nvim
+```
+
+#### (Optional) Install on offline machine without access to Github
+First, run the above steps on an internet-connected machine. Then:
+```
+cd ~
+tar -czf nvim-portable.tar.gz \
+  .config/nvim \
+  .local/share/nvim/lazy
+```
+
+Copy `nvim-portable.tar.gz` to the offline machine and run:
+```
+cd ~
+tar -xzf nvim-portable.tar.gz
+```
+
