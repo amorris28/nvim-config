@@ -16,6 +16,14 @@ chmod +x nvim-linux-x86_64.appimage
 ln -s nvim-linux-x86_64.appimage nvim
 ```
 
+#### (Optional) If FUSE is unavailable, extract appimage manually
+```
+cd ~/.local/bin
+./nvim.appimage --appimage-extract
+mv squashfs-root nvim-squashfs
+ln -s nvim-squashfs/usr/bin/nvim nvim
+```
+
 #### (Optional) Add to PATH if not already there
 ```
 echo 'export PATH="$HOME/.local/bin:$PATH"' >> ~/.bashrc
